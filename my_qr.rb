@@ -1,8 +1,10 @@
-p "hi"
 require "rqrcode"
 
+p "Enter a url: "
+answer = gets.chomp
+
 # Use the RQRCode::QRCode class to encode some text
-qrcode = RQRCode::QRCode.new("SMSTO:9876543210:Hi Alice! It's Mohammad Ali")
+qrcode = RQRCode::QRCode.new(answer)
 
 # Use the .as_png method to create a 500 pixels by 500 pixels image
 png = qrcode.as_png({ :size => 500 })
